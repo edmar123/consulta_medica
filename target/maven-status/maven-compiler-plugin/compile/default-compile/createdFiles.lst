@@ -1,0 +1,9 @@
+br/com/consultemed/paciente/Endereco.class
+br/com/consultemed/utils/Constantes.class
+br/com/consultemed/contato/Contato.class
+br/com/consultemed/exame/Endereco.class
+br/com/consultemed/utils/JPAUtils.class
+br/com/consultemed/endereco/Endereco.class
+br/com/consultemed/utils/MainPrincipal.class
+br/com/consultemed/prontuario/Endereco.class
+br/com/consultemed/email/Endereco.class
