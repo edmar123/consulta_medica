@@ -1,4 +1,4 @@
-package br.com.consultemed.paciente;
+package br.com.consultemed.paciente.model;
 
 import java.util.List;
 

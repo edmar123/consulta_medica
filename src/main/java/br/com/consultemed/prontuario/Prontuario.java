@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import br.com.consultemed.paciente.Paciente;
+import br.com.consultemed.paciente.model.Paciente;
 
 @Entity
 @Table

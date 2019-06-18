@@ -2,7 +2,7 @@ package br.com.consultemed.utils;
 
 import br.com.consultemed.dadosPessoais.DadosPessoais;
 import br.com.consultemed.endereco.Endereco;
-import br.com.consultemed.paciente.Paciente;
+import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.paciente.service.PacienteService;
 
 public class MainPrincipal {
