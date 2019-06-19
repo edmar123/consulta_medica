@@ -18,17 +18,13 @@ import org.hibernate.annotations.CascadeType;
 
 import br.com.consultemed.agendamento.Agendamento;
 import br.com.consultemed.contato.Contato;
-import br.com.consultemed.dadosPessoais.DadosPessoais;
 import br.com.consultemed.endereco.Endereco;
+import br.com.consultemed.pessoa.Pessoa;
 
 @Entity
 @Table
-public class Paciente {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	private Long id;
-	
+public class Paciente extends Pessoa {
+		
 	@OneToOne()
 	@JoinColumn(name = "id_endereco")
 	@Cascade(CascadeType.PERSIST)
@@ -42,16 +38,6 @@ public class Paciente {
 	@JoinColumn(name = "id_agendamento")
 	private Agendamento agendamento;
 	
-	@Embedded
-	private DadosPessoais dadosPessoais;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Endereco getEndereco() {
 		return endereco;
@@ -77,18 +63,6 @@ public class Paciente {
 		this.agendamento = agendamento;
 	}
 
-	public DadosPessoais getDadosPessoais() {
-		return dadosPessoais;
-	}
 
-	public void setDadosPessoais(DadosPessoais dadosPessoais) {
-		this.dadosPessoais = dadosPessoais;
-	}
-
-	@Override
-	public String toString() {
-		return "Paciente [id=" + id + ", endereco=" + endereco + ", contatoAcompanhamento=" + contatoAcompanhamento
-				+ ", agendamento=" + agendamento + ", dadosPessoais=" + dadosPessoais + "]";
-	}
 	
 }

@@ -26,11 +26,12 @@ public class Telefone {
 		this.id = id;
 	}
 
-	public String getNome() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNome(String nome) {
-		this.numero = nome;
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
+
 }

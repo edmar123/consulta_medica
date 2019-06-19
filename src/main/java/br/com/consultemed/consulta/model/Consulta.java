@@ -1,4 +1,4 @@
-package br.com.consultemed.consulta;
+package br.com.consultemed.consulta.model;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import br.com.consultemed.exame.Exame;
-import br.com.consultemed.medico.Medico;
+import br.com.consultemed.medico.model.Medico;
 import br.com.consultemed.prontuario.Prontuario;
 
 @Entity

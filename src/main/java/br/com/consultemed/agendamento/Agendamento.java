@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.com.consultemed.consulta.Consulta;
+import br.com.consultemed.consulta.model.Consulta;
 
 @Entity
 @Table

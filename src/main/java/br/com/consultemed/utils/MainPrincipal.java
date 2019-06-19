@@ -1,6 +1,5 @@
 package br.com.consultemed.utils;
 
-import br.com.consultemed.dadosPessoais.DadosPessoais;
 import br.com.consultemed.endereco.Endereco;
 import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.paciente.service.PacienteService;
@@ -8,11 +7,7 @@ import br.com.consultemed.paciente.service.PacienteService;
 public class MainPrincipal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-//		EntityManagerFactory managerFactory= JPAUtils.getEntityManagerFactory();
-//		
-//		EntityManager manager = managerFactory.createEntityManager();
+
 		
 		System.out.println("Criando um servico de paciente ");
 //		
@@ -20,11 +15,9 @@ public class MainPrincipal {
 //		
 		System.out.println("Criando um paciente ");
 		Paciente paciente = new Paciente();
-		
-		DadosPessoais dadosPessoais = new DadosPessoais();
-		dadosPessoais.setNome("jose soares");
-		paciente.setDadosPessoais(dadosPessoais);
-				
+		paciente.setNome("Jose silva");
+		paciente.setCpf("22332434");
+
 		Endereco endereco =  new Endereco();
 		endereco.setBairro("jacare");
 		endereco.setRua("rua santo antonio");
