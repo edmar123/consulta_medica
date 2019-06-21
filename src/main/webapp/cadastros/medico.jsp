@@ -8,12 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Cadastro de médico</h2>
+	<h2 align="center">Cadastro de médico</h2>
 	<br/>
-	 <form method="POST" action='medico' name="frmAddUser">
+	<br/>
+	 <form method="POST" action='medico'>
 
-            User Name : <input type="text" name="areaAtuacao" 
-            value="<c:out value="${medico.areaAtuacao}" />" > (You Can't Change this)<br /> 
+            Nome : <input type="text" name="nome" 
+            value="<c:out value="${medico.nome}" />"  required > 
+            
+            Cpf : <input type="text" name="cpf" 
+            value="<c:out value="${medico.cpf}" />" required > 
+            
+            Área de atuação : <input type="text" name="areaAtuacao" 
+            value="<c:out value="${medico.areaAtuacao}" />" required > 
+            
 <%-- 
             User Name : <input type="text" name="uname"
                                value="<c:out value="${user.uname}" />" /> <br />

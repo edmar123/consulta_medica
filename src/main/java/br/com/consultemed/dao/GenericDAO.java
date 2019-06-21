@@ -34,8 +34,8 @@ public class GenericDAO<T, G> {
 		this.factory.getTransaction().begin();
 		this.factory.persist(entidade);
 		this.factory.getTransaction().commit();
-		this.factory.close();
-	}
+//		this.factory.close();
+	} 
 
 	public void remover(G id) {
 		this.factory.getTransaction().begin();

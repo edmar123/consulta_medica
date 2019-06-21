@@ -1,6 +1,7 @@
-package br.com.consultemed.controler;
+package br.com.consultemed.medico.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,20 +11,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.consultemed.medico.model.Medico;
-
+import br.com.consultemed.medico.service.MedicoService;
 /**
  * Servlet implementation class MedicoServlet
  */
-@WebServlet("/home/medico")
+@WebServlet("/medico")
 public class MedicoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private MedicoService medicoService;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public MedicoServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        this.medicoService = new MedicoService();
     }
 
 	/**
@@ -32,7 +35,9 @@ public class MedicoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastros/cadastro_medico.jsp");
+		List<Medico> medicosCadastrados = this.medicoService.listar();
+		request.setAttribute("medicos", medicosCadastrados);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/listagem/lista_medico.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -42,9 +47,18 @@ public class MedicoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		String nome = request.getParameter("nome");
+		String cpf = request.getParameter("cpf");
+		String areaAtuacao = request.getParameter("areaAtuacao");
+		
 		Medico medico = new  Medico();
-		String areAtuacao = request.getParameter("areaAtuacao");
+		medico.setNome(nome);
+		medico.setCpf(cpf);
+		medico.setAreaAtuacao(areaAtuacao);
+		
+		this.medicoService.salvar(medico);
 		
 	}
-
+	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 import br.com.consultemed.dao.GenericDAO;
 
-public class ServicoGenerico<T, G extends Serializable> {
+public abstract class ServicoGenerico<T, G extends Serializable> {
 
 	private GenericDAO<T,G> daoGenerico;
 	

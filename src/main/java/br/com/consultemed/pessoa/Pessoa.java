@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 
-import org.hibernate.annotations.Cascade;
-
 @MappedSuperclass
 public class Pessoa{
 	
@@ -18,10 +16,10 @@ public class Pessoa{
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
-	@Column
+	@Column(nullable=false)
 	private String nome;
 	
-	@Column
+	@Column(unique=true)
 	private String cpf;
 	
 	@OneToOne(cascade=CascadeType.PERSIST)
