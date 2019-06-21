@@ -10,5 +10,4 @@ public class PacienteDAO extends GenericDAO<Paciente, Long> {
 		super(Paciente.class);
 	}
 
-
 }

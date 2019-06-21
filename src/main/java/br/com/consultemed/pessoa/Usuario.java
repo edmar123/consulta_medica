@@ -15,8 +15,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
-import br.com.consultemed.email.Email;
-import br.com.consultemed.telefone.Telefone;
+import br.com.consultemed.email.model.Email;
+import br.com.consultemed.telefone.model.Telefone;
 
 @Entity
 @Table

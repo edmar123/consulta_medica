@@ -1,4 +1,4 @@
-package br.com.consultemed.endereco;
+package br.com.consultemed.contato.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,17 +9,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Endereco {
+public class Contato {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
 	@Column
-	private String bairro;
-	
-	@Column
-	private String rua;
+	private String nomeContato;
 
 	public Long getId() {
 		return id;
@@ -29,20 +26,17 @@ public class Endereco {
 		this.id = id;
 	}
 
-	public String getBairro() {
-		return bairro;
+	public String getNomeContato() {
+		return nomeContato;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setNomeContato(String nomeContato) {
+		this.nomeContato = nomeContato;
 	}
 
-	public String getRua() {
-		return rua;
-	}
-
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
+	@Override
+	public String toString() {
+		return "Contato [id=" + id + ", nomeContato=" + nomeContato + "]";
+	}	
 	
 }

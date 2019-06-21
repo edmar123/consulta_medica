@@ -1,4 +1,4 @@
-package br.com.consultemed.prontuario;
+package br.com.consultemed.prontuario.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,6 +49,10 @@ public class Prontuario {
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Prontuario [id=" + id + ", medicacao=" + medicacao + ", paciente=" + paciente + "]";
+	}
 	
 }

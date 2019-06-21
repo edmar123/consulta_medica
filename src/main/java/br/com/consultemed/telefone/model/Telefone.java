@@ -1,4 +1,4 @@
-package br.com.consultemed.contato;
+package br.com.consultemed.telefone.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,14 +9,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Contato {
+public class Telefone {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
 	@Column
-	private String nomeContato;
+	private String numero;
 
 	public Long getId() {
 		return id;
@@ -26,11 +26,17 @@ public class Contato {
 		this.id = id;
 	}
 
-	public String getNomeContato() {
-		return nomeContato;
+	public String getNumero() {
+		return numero;
 	}
 
-	public void setNomeContato(String nomeContato) {
-		this.nomeContato = nomeContato;
-	}	
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	@Override
+	public String toString() {
+		return "Telefone [id=" + id + ", numero=" + numero + "]";
+	}
+	
 }

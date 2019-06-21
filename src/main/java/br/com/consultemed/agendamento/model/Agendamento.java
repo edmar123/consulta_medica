@@ -1,4 +1,4 @@
-package br.com.consultemed.agendamento;
+package br.com.consultemed.agendamento.model;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -50,7 +50,10 @@ public class Agendamento {
 	public void setDataAgendamento(LocalDate dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "Agendamento [id=" + id + ", nome=" + nome + ", dataAgendamento=" + dataAgendamento + ", consultas="
+				+ consultas + "]";
+	}
 	
 }
