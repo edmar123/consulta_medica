@@ -1,4 +1,4 @@
-package br.com.consultemed.email;
+package br.com.consultemed.email.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,4 +35,11 @@ public class Email {
 	public void setNomeEmail(String nomeEmail) {
 		this.nomeEmail = nomeEmail;
 	}
+
+	@Override
+	public String toString() {
+		return "Email [id=" + id + ", nomeEmail=" + nomeEmail + "]";
+	}
+	
+	
 }

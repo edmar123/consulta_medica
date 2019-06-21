@@ -1,6 +1,6 @@
 package br.com.consultemed.utils;
 
-import br.com.consultemed.endereco.Endereco;
+import br.com.consultemed.endereco.model.Endereco;
 import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.paciente.service.PacienteService;
 

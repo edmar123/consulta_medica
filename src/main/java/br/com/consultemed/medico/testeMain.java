@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.consultemed.email.Email;
+import br.com.consultemed.email.model.Email;
 import br.com.consultemed.medico.model.Medico;
 import br.com.consultemed.medico.service.medicoService;
 import br.com.consultemed.pessoa.TipoUsuario;
 import br.com.consultemed.pessoa.Usuario;
-import br.com.consultemed.telefone.Telefone;
+import br.com.consultemed.telefone.model.Telefone;
 
 public class testeMain {
 

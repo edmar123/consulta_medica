@@ -16,9 +16,9 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
-import br.com.consultemed.agendamento.Agendamento;
-import br.com.consultemed.contato.Contato;
-import br.com.consultemed.endereco.Endereco;
+import br.com.consultemed.agendamento.model.Agendamento;
+import br.com.consultemed.contato.model.Contato;
+import br.com.consultemed.endereco.model.Endereco;
 import br.com.consultemed.pessoa.Pessoa;
 
 @Entity
@@ -63,6 +63,10 @@ public class Paciente extends Pessoa {
 		this.agendamento = agendamento;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Paciente [endereco=" + endereco + ", contatoAcompanhamento=" + contatoAcompanhamento + ", agendamento="
+				+ agendamento + "]";
+	}
 	
 }

@@ -8,9 +8,6 @@ public class PacienteService extends ServicoGenerico<Paciente, Long> {
 
 	public PacienteService() {
 		super(Paciente.class);
-	}
-
-	
-
+	}	
 
 }
