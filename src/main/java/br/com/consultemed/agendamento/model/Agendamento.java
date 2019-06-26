@@ -1,7 +1,6 @@
 package br.com.consultemed.agendamento.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,10 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import br.com.consultemed.consulta.model.Consulta;
+import br.com.consultemed.paciente.model.Paciente;
 
 @Entity
 @Table
@@ -28,9 +27,9 @@ public class Agendamento {
 	@Column(name="data_agendamento")
 	private LocalDate dataAgendamento;
 	
-	@OneToMany
-	@JoinColumn(name="agendamento")
-	private List<Consulta> consultas;
+	@OneToOne
+	@JoinColumn(name="id_paciente")
+	private Paciente paciente;
 	
 	public Long getId() {
 		return id;
@@ -50,10 +49,11 @@ public class Agendamento {
 	public void setDataAgendamento(LocalDate dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
 	}
-	@Override
-	public String toString() {
-		return "Agendamento [id=" + id + ", nome=" + nome + ", dataAgendamento=" + dataAgendamento + ", consultas="
-				+ consultas + "]";
+	public Paciente getPaciente() {
+		return paciente;
 	}
-	
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
 }

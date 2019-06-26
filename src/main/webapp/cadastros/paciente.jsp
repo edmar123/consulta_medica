@@ -10,13 +10,20 @@
 <body>
 	<h2 align="center">Cadastro de Paciente</h2>
 	<br/>
-	 <form method="POST" action='medico' name="frmAddUser">
+	 <form method="POST" action='paciente' name="frmAddUser">
 
             Nome : <input type="text" name="nome" 
             value="<c:out value="${paciente.nome}" />" > 
             
             Cpf : <input type="text" name="cpf" 
             value="<c:out value="${paciente.cpf}" />" > 
+            
+            <p>Endereço: </p> <br>
+            Rua : <input type="text" name="rua" 
+            value="<c:out value="${paciente.endereco.rua}" />" > 
+            
+            Bairro : <input type="text" name="bairro" 
+            value="<c:out value="${paciente.endereco.bairro}" />" > 
              
 <%-- 
             User Name : <input type="text" name="uname"
@@ -35,7 +42,7 @@
             Registration : <input
                 type="text" name="dob"
                 value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
-            <input  type="submit" value="Submit" />
+            <input  type="submit" value="salvar" />
         </form>
 
 </body>

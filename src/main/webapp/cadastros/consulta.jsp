@@ -2,25 +2,23 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 align="center">Cadastro de médico</h2>
+	<h2 align="center">agendar consulta</h2>
 	<br/>
 	<br/>
-	 <form method="POST" action='medico'>
+	 <form method="POST" action='consulta'>
 
-            Nome : <input type="text" name="nome" 
-            value="<c:out value="${medico.nome}" />"  required > 
+            Descrição : <input type="text" name="descricao" 
+            value="<c:out value="${consulta.descricao}" />"  required > 
             
-            Cpf : <input type="text" name="cpf" 
-            value="<c:out value="${medico.cpf}" />" required > 
-            
-            Área de atuação : <input type="text" name="areaAtuacao" 
-            value="<c:out value="${medico.areaAtuacao}" />" required > 
+            Data do Agendamento : <input type="date" name="dataAgendamento" 
+            value="<fmt:formatDate pattern="dd/MM/yyyy" value="${consulta.agendandamento.dataAgendamento}" />"  required > 
             
 <%-- 
             User Name : <input type="text" name="uname"
@@ -39,7 +37,7 @@
             Registration : <input
                 type="text" name="dob"
                 value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
-            <input  type="submit" value="salvar" />
+            <input  type="submit" value="agendar" />
         </form>
 
 </body>

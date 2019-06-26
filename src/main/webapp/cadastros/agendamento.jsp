@@ -8,16 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 align="center">Cadastro de médico</h2>
+	<h2 align="center">agendar consulta</h2>
 	<br/>
 	<br/>
-	 <form method="POST" action='medico'>
+	 <form method="POST" action='agendamento'>
 
             Nome : <input type="text" name="nome" 
-            value="<c:out value="${medico.nome}" />"  required > 
+            value="<c:out value="${agendamento.nome}" />"  required > 
             
             Cpf : <input type="text" name="cpf" 
-            value="<c:out value="${medico.cpf}" />" required > 
+            value="<c:out value="${agendamento.cpf}" />" required > 
             
             Área de atuação : <input type="text" name="areaAtuacao" 
             value="<c:out value="${medico.areaAtuacao}" />" required > 
@@ -39,7 +39,7 @@
             Registration : <input
                 type="text" name="dob"
                 value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
-            <input  type="submit" value="salvar" />
+            <input  type="submit" value="agendar" />
         </form>
 
 </body>
