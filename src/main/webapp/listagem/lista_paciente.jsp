@@ -34,6 +34,7 @@
             </c:forEach>
         </tbody>
     </table>
-<p><a href="paciente">adicionar novo paciente</a></p>
+	 <p><a href="paciente?action=cadastro">adicionar novo paciente</a></p>
+	<p><a href="home?action=home">home</a></p>
 </body>
 </html>

@@ -38,32 +38,14 @@
 				</select>
 			</label>
 			<br>                     
-                       
-<%-- 
-			<c:if test="${not empty mensagem}">
-				<p class="alert alert-success">
+            <input  type="submit" value="agendar" />
+           
+        </form>
+        <c:if test="${not empty mensagem}">
+				<p class="alert alert-error">
 					${mensagem}
 				</p>
-			</c:if>	
-            User Name : <input type="text" name="uname"
-                               value="<c:out value="${user.uname}" />" /> <br />
-            Password : <input
-                type="password" name="pass"
-                value="<c:out value="${user.password}" />" /> <br /> 
-            Email : <input
-                type="text" name="email"
-                value="<c:out value="${user.email}" />" /> <br /> 
- 
-            Registration : <input
-                type="text" name="dob"
-                value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" readonly="readonly"/>(You Can't Change this)  <br />
-
-            Registration : <input
-                type="text" name="dob"
-                value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
-            <input  type="submit" value="agendar" />
-            
-        </form>
+		</c:if>	
         <a href="consulta?action=listar">Listar</a>
 
 </body>

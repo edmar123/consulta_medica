@@ -49,5 +49,7 @@
         </tbody>
     </table>
     <p><a href="consulta?action=cadastro">adicionar nova consulta</a></p>
+	<p><a href="home?action=home">home</a></p>
+    
  	</body>
 </html>

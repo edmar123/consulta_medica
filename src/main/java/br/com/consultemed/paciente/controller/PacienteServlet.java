@@ -29,7 +29,7 @@ public class PacienteServlet extends HttpServlet {
 	private PacienteService pacienteService;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#HttpServlet() 
 	 */
 	public PacienteServlet() {
 		super();
@@ -83,7 +83,7 @@ public class PacienteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
 
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
@@ -104,6 +104,12 @@ public class PacienteServlet extends HttpServlet {
 		paciente.setEndereco(endereco);
 		paciente.setUsuario(usuario);
 		this.pacienteService.salvar(paciente);
+		String mensagem = "Paciente cadastrado com sucesso";
+		
+		request.setAttribute("mensagem", mensagem);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastros/paciente.jsp");
+		dispatcher.forward(request, response);
 
 	}
 

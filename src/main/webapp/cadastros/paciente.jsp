@@ -10,7 +10,7 @@
 <body>
 	<h2 align="center">Cadastro de Paciente</h2>
 	<br/>
-	 <form method="POST" action='paciente' name="frmAddUser">
+	 <form method="POST" action='paciente' name="">
 
             Nome : <input type="text" name="nome" 
             value="<c:out value="${paciente.nome}" />" > 
@@ -44,8 +44,13 @@
                 value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
             <input  type="submit" value="salvar" />
         </form>
-		<a href="paciente?action=listar">Listar</a>
-        
+        	<c:if test="${not empty mensagem}">
+				<p class="alert alert-success">
+					${mensagem}
+				</p>
+			</c:if>	
+ 		<a href="paciente?action=listar">Listar</a>
+       
 
 </body>
 </html>

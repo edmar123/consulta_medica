@@ -22,4 +22,14 @@ public class ConsultaDao extends GenericDAO<Consulta, Long> {
 		
 		return entidades;
 	}
+	
+	public boolean existeConsultaComData(LocalDate dataAgendamento) {
+		Query query = this.factory.createQuery("select case when (count(con) > 0) then true else false end "
+				+ "from Consulta con INNER JOIN con.agendamento as agen"
+				+ " where agen.dataAgendamento = :dataAgendamento");
+		query.setParameter("dataAgendamento", dataAgendamento);
+		
+		boolean existe = (boolean) query.getSingleResult();
+		return existe;
+	}
 }

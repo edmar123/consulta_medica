@@ -33,6 +33,8 @@ public class ConsultaServlet extends HttpServlet {
 	private ConsultaService consultaService;
 	private MedicoService medicoService;
 	private PacienteService pacienteService;
+	private String mensagem = "";
+
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -84,6 +86,7 @@ public class ConsultaServlet extends HttpServlet {
 		LocalDate dataAgendamentoFormatter = ConvertStringToLocalDate.convertToLocalDate(dataAgendamento);
 
 		List<Consulta> consultas = this.consultaService.buscarPorDataAgendamento(dataAgendamentoFormatter);
+		
 		if (consultas.isEmpty()) {
 			String mensagem = "Não há consultas agendadas nesta data";
 			request.setAttribute("mensagem", mensagem);
@@ -106,6 +109,9 @@ public class ConsultaServlet extends HttpServlet {
 
 	private void prepararParaCadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		request.setAttribute("mensagem", mensagem);
+
 		// listando todos os médicos que podem fazer fazer parte de uma consulta
 		List<Medico> medicosCadastrados = this.medicoService.listar();
 		request.setAttribute("medicos", medicosCadastrados);
@@ -135,8 +141,8 @@ public class ConsultaServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-
+//		doGet(request, response);
+		
 		String descricao = request.getParameter("descricao");
 		String dataAgendamento = request.getParameter("dataAgendamento");
 		String idMedico = request.getParameter("medico");
@@ -156,8 +162,20 @@ public class ConsultaServlet extends HttpServlet {
 		agendamento.setDataAgendamento(dataAgendamentoFormatter);
 
 		consulta.setAgendamento(agendamento);
+		
+		boolean existeConsultaComDataAgendamento= this.consultaService.existeConsultaComData(dataAgendamentoFormatter);
+		
+		if (existeConsultaComDataAgendamento) {
+			mensagem = "Já existe uma consulta para esta data";
+//			response.sendRedirect(request.getContextPath() +"/consulta?action=cadastro"); 
 
-		consultaService.salvar(consulta);
+		}else {
+			consultaService.salvar(consulta);
+			mensagem = "médico cadastrado com sucesso";
+			
+		}
+		
+		response.sendRedirect(request.getContextPath()+"/consulta?action=cadastro");
 
 	}
 }

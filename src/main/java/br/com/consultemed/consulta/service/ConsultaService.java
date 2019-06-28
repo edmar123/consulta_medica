@@ -19,5 +19,10 @@ public class ConsultaService extends ServicoGenerico<Consulta, Long> {
 	public List<Consulta> buscarPorDataAgendamento(LocalDate agendamento){
 		return this.consultaDao.buscarPorDataAgendamento(agendamento);
 	}
+	
+	public boolean existeConsultaComData(LocalDate dataAgendamento) {
+		return this.consultaDao.existeConsultaComData(dataAgendamento);
+	}
+
 
 }

@@ -30,6 +30,6 @@
             </c:forEach>
         </tbody>
     </table>
-<!--     <p><a href="medico">adicionar novo médicp</a></p>
- --></body>
+ 	<p><a href="medico?action=cadastro">adicionar novo médico</a></p>
+	<p><a href="home?action=home">home</a></p></body>
 </html>

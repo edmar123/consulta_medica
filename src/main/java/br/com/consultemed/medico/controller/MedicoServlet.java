@@ -82,7 +82,7 @@ public class MedicoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
 
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
@@ -98,6 +98,13 @@ public class MedicoServlet extends HttpServlet {
 
 		medico.setUsuario(usuario);
 		this.medicoService.salvar(medico);
+		
+		String mensagem = "médico cadastrado com sucesso";
+		
+		request.setAttribute("mensagem", mensagem);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastros/medico.jsp");
+		dispatcher.forward(request, response);
 
 	}
 

@@ -45,43 +45,15 @@ public class HomeServlet extends HttpServlet {
 		String action = request.getParameter("action");
 
 		switch (action) {
-		case "medico":
-			dispatcher = request.getRequestDispatcher("/cadastros/medico.jsp");
-			dispatcher.forward(request, response);
+		case "home":
+			response.sendRedirect(request.getContextPath());
 			break;
-		case "paciente":
-			dispatcher = request.getRequestDispatcher("/cadastros/paciente.jsp");
-			dispatcher.forward(request, response);
-			break;
-		case "agendamento":
-			dispatcher = request.getRequestDispatcher("/cadastros/agendamento.jsp");
-			dispatcher.forward(request, response);
-		case "consulta":
-			List<Medico> medicos =  this.medicoService.listar();
-			request.setAttribute("medicos",medicos);
-			dispatcher = request.getRequestDispatcher("/cadastros/consulta.jsp");
-			dispatcher.forward(request, response);
-		// case "/delete":
-		// deleteBook(request, response);
-		// break;
-		// case "/edit":
-		// showEditForm(request, response);
-		// break;
-		// case "/update":
-		// updateBook(request, response);
-		// break;
 		default:
 			// listBook(request, response);
 			break;
 		}
 	}
 
-	private void homeCadastros(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastros/medico.jsp");
-		dispatcher.forward(request, response);
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
