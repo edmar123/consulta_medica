@@ -19,8 +19,32 @@
             
             Data do Agendamento : <input type="date" name="dataAgendamento" 
             value="<fmt:formatDate pattern="dd/MM/yyyy" value="${consulta.agendandamento.dataAgendamento}" />"  required > 
-            
+            <br>
+            <label for="medico">Médicos disponíveis :
+				<select id="medico" name="medico">
+	                <c:forEach var="medico" items="${medicos}">
+						<option value="${medico.id}">${medico.nome}</option>     
+					</c:forEach>             
+				</select>
+			</label>
+			<br>   
+			
+			<br>
+            <label for="paciente">Selecionar paciente :
+				<select id="paciente" name="paciente">
+	                <c:forEach var="paciente" items="${pacientes}">
+						<option value="${paciente.id}">${paciente.nome}</option>     
+					</c:forEach>             
+				</select>
+			</label>
+			<br>                     
+                       
 <%-- 
+			<c:if test="${not empty mensagem}">
+				<p class="alert alert-success">
+					${mensagem}
+				</p>
+			</c:if>	
             User Name : <input type="text" name="uname"
                                value="<c:out value="${user.uname}" />" /> <br />
             Password : <input
@@ -38,7 +62,9 @@
                 type="text" name="dob"
                 value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
             <input  type="submit" value="agendar" />
+            
         </form>
+        <a href="consulta?action=listar">Listar</a>
 
 </body>
 </html>

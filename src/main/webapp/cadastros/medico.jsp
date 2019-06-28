@@ -41,6 +41,7 @@
                 value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
             <input  type="submit" value="salvar" />
         </form>
-
+        <a href="medico?action=listar">Listar</a>
+        
 </body>
 </html>

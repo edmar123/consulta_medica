@@ -1,6 +1,7 @@
 package br.com.consultemed.controler;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,17 +10,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.consultemed.medico.model.Medico;
+import br.com.consultemed.medico.service.MedicoService;
+
 /**
  * Servlet implementation class HomeServlet
  */
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private MedicoService medicoService;
 
 	/**
 	 * Default constructor.
 	 */
 	public HomeServlet() {
+		this.medicoService = new MedicoService();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -50,6 +57,8 @@ public class HomeServlet extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("/cadastros/agendamento.jsp");
 			dispatcher.forward(request, response);
 		case "consulta":
+			List<Medico> medicos =  this.medicoService.listar();
+			request.setAttribute("medicos",medicos);
 			dispatcher = request.getRequestDispatcher("/cadastros/consulta.jsp");
 			dispatcher.forward(request, response);
 		// case "/delete":

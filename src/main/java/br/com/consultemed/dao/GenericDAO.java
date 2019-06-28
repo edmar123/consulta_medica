@@ -11,7 +11,7 @@ import br.com.consultemed.utils.JPAUtils;
 public class GenericDAO<T, G> {
 
 	EntityManagerFactory emf = JPAUtils.getEntityManagerFactory();
-	EntityManager factory = emf.createEntityManager();
+	protected EntityManager factory = emf.createEntityManager();
 	
 	private Class<T> clazz;
 	
@@ -41,7 +41,6 @@ public class GenericDAO<T, G> {
 		this.factory.getTransaction().begin();
 		this.factory.remove(this.buscarPorId(id));
 		this.factory.getTransaction().commit();
-		this.factory.close();
 	}
 
 	public void editar(T entidade) {

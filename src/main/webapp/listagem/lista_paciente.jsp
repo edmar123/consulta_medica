@@ -9,6 +9,8 @@
 <title>Show All Users</title>
 </head>
 <body>
+	<h3 align="center">Pacientes cadastrados</h3>
+	
     <table border=1>
         <thead>
             <tr>
