@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.id.CompositeNestedGeneratedValueGenerator.GenerationContextLocator;
-
 import br.com.consultemed.agendamento.model.Agendamento;
 import br.com.consultemed.consulta.model.Consulta;
 import br.com.consultemed.consulta.service.ConsultaService;
@@ -21,7 +19,6 @@ import br.com.consultemed.medico.service.MedicoService;
 import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.paciente.service.PacienteService;
 import br.com.consultemed.utils.ConvertStringToLocalDate;
-import net.bytebuddy.agent.builder.AgentBuilder.InitializationStrategy.Dispatcher;
 
 /**
  * Servlet implementation class MedicoServlet
@@ -46,10 +43,11 @@ public class ConsultaServlet extends HttpServlet {
 		this.pacienteService = new PacienteService();
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	public void destroy() {
+		super.destroy();
+		this.mensagem = "";
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -109,8 +107,12 @@ public class ConsultaServlet extends HttpServlet {
 
 	private void prepararParaCadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//setar a minima que pode ser selecionada
+		//o agendamento so pode ser realizado para datas apartir de hj
+		LocalDate data = LocalDate.now();
 		
-		request.setAttribute("mensagem", mensagem);
+		request.setAttribute("mensagem", this.mensagem);
+		request.setAttribute("data", data);
 
 		// listando todos os médicos que podem fazer fazer parte de uma consulta
 		List<Medico> medicosCadastrados = this.medicoService.listar();
@@ -131,7 +133,7 @@ public class ConsultaServlet extends HttpServlet {
 		request.setAttribute("consultas", consultasCadastradas);
 		dispatcher = request.getRequestDispatcher("/listagem/lista_consulta.jsp");
 		dispatcher.forward(request, response);
-
+		this.destroy();
 	}
 	
 	/**

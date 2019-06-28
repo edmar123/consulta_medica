@@ -17,7 +17,7 @@
             Descrição : <input type="text" name="descricao" 
             value="<c:out value="${consulta.descricao}" />"  required > 
             
-            Data do Agendamento : <input type="date" name="dataAgendamento" 
+            Data do Agendamento : <input type="date" name="dataAgendamento" min="${data}"
             value="<fmt:formatDate pattern="dd/MM/yyyy" value="${consulta.agendandamento.dataAgendamento}" />"  required > 
             <br>
             <label for="medico">Médicos disponíveis :
