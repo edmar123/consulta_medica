@@ -47,7 +47,7 @@ public class GenericDAO<T, G> {
 		this.factory.getTransaction().begin();
 		this.factory.merge(entidade);
 		this.factory.getTransaction().commit();
-		this.factory.close();
+//		this.factory.close();
 	}
 
 	public T buscarPorId(G id) {

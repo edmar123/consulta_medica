@@ -33,6 +33,8 @@
                 <th>Descrição</th>
                 <th>Médico</th>
                 <th>Paciente</th>
+				<th>delete</th>
+                <th>Reagendar</th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +45,7 @@
 					<td><c:out value="${consulta.medico.nome}" /></td>
 					<td><c:out value="${consulta.agendamento.paciente.nome}" /></td>
                     <td><a href="consulta?action=delete&id=<c:out value="${consulta.id}"/>">Delete</a></td>
+					<td><a href="consulta?action=editar&id=<c:out value='${consulta.id}' />">reagendar consulta</a></td>
 					
                 </tr>
             </c:forEach>

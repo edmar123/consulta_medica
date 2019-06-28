@@ -13,12 +13,17 @@
 	<br/>
 	<br/>
 	 <form method="POST" action='consulta'>
+	 		
+	 		<c:if test="${consulta.id != null}">
+           		<input type="hidden" name="id" value="<c:out value='${consulta.id}' />" />
+            </c:if> 
 
             Descrição : <input type="text" name="descricao" 
             value="<c:out value="${consulta.descricao}" />"  required > 
             
             Data do Agendamento : <input type="date" name="dataAgendamento" min="${data}"
-            value="<fmt:formatDate pattern="dd/MM/yyyy" value="${consulta.agendandamento.dataAgendamento}" />"  required > 
+            value="<fmt:formatDate pattern="dd/MM/yyyy" value="${dataAgendamento}" />"  required > 
+        
             <br>
             <label for="medico">Médicos disponíveis :
 				<select id="medico" name="medico">
@@ -46,6 +51,7 @@
 					${mensagem}
 				</p>
 		</c:if>	
+		
         <a href="consulta?action=listar">Listar</a>
 
 </body>

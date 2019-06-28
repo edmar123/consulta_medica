@@ -2,6 +2,7 @@ package br.com.consultemed.consulta.controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -32,6 +33,9 @@ public class ConsultaServlet extends HttpServlet {
 	private PacienteService pacienteService;
 	private String mensagem = "";
 
+//	public String getErrorMessage() {
+//		
+//	}
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -71,11 +75,45 @@ public class ConsultaServlet extends HttpServlet {
 		case "delete":
 			deletar(request, response);
 			break;
+		case "editar":
+			editar(request, response);
+			break;
 		default:
 
 			break;
 		}
 
+	}
+
+	private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		String idStringConsulta = request.getParameter("id");
+		
+		if (idStringConsulta != null) {
+			Long id = Long.parseLong(idStringConsulta);
+			Consulta consultaEncontrada = this.consultaService.buscarPorId(id);
+			
+			if (consultaEncontrada.getAgendamento().getDataAgendamento() != null) {
+				
+				Date dataConvertida = ConvertStringToLocalDate.convertLocalDateToDate(consultaEncontrada.getAgendamento().getDataAgendamento());
+
+				request.setAttribute("dataAgendamento", dataConvertida); 
+			}
+			
+			request.setAttribute("consulta", consultaEncontrada);
+			
+			List<Medico> medicosCadastrados = this.medicoService.listar();
+			request.setAttribute("medicos", medicosCadastrados);
+
+			List<Paciente> pacientesCadastrados = this.pacienteService.listar();
+			request.setAttribute("pacientes", pacientesCadastrados);
+
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("cadastros/consulta.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 	}
 
 	private void consultarPorData(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -107,6 +145,7 @@ public class ConsultaServlet extends HttpServlet {
 
 	private void prepararParaCadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		//setar a minima que pode ser selecionada
 		//o agendamento so pode ser realizado para datas apartir de hj
 		LocalDate data = LocalDate.now();
@@ -145,10 +184,12 @@ public class ConsultaServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
 		
+		String idConsulta = request.getParameter("id");
 		String descricao = request.getParameter("descricao");
 		String dataAgendamento = request.getParameter("dataAgendamento");
 		String idMedico = request.getParameter("medico");
 		String idPaciente = request.getParameter("paciente");
+
 
 		Paciente pacienteEncontrado = this.pacienteService.buscarPorId(new Long(idPaciente));
 		Medico medicoEncontrado = this.medicoService.buscarPorId(new Long(idMedico));
@@ -161,7 +202,7 @@ public class ConsultaServlet extends HttpServlet {
 
 		Agendamento agendamento = new Agendamento();
 		agendamento.setPaciente(pacienteEncontrado);
-		agendamento.setDataAgendamento(dataAgendamentoFormatter);
+		agendamento.setDataAgendamento(dataAgendamentoFormatter);	
 
 		consulta.setAgendamento(agendamento);
 		
@@ -172,8 +213,18 @@ public class ConsultaServlet extends HttpServlet {
 //			response.sendRedirect(request.getContextPath() +"/consulta?action=cadastro"); 
 
 		}else {
-			consultaService.salvar(consulta);
-			mensagem = "médico cadastrado com sucesso";
+			
+			if (idConsulta != null) {
+				consulta.setId(new Long(idConsulta));
+				consultaService.editar(consulta);
+
+				mensagem = "consulta reagendada";
+			
+			}else {
+				consultaService.salvar(consulta);
+				mensagem = "consulta cadastrado com sucesso";
+
+			}
 			
 		}
 		
