@@ -1,0 +1,68 @@
+/*
+ @autor: edmar soares
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+	background: #6C2A6A;
+	font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: center;
+}
+
+.header {
+	margin: 40px 0 0 0;
+	width: 1350px;
+	height: 250px;
+	background-color: #ffffff;
+}
+
+h3 {
+	color: #6C2A6A;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 2.5em;
+	margin: 0 0 40px;
+	padding: 20px 0 10px;
+}
+
+.title {
+	background-color: #ffffff;
+	text-decoration: none;
+}
+
+.content {
+	padding: 50px 10px 0 10px;
+	text-align: justify;
+	background-color: #6C2A6A;
+	height: 250px;
+}
+
+.content p {
+	color: #ffffff;
+	margin: 40px 0 0 0;
+	text-align: center;;
+}
+
+span {
+	color: #6C2A6A;
+}
+
+.navbar navbar-expand-lg navbar-light bg-light {
+	background: #ffffff;
+}
+
+#navbarSupportedContent {
+	background: #ffffff;
+}
+
+li a:hover {
+	background-color: #6C2A6A !important;
+}
