@@ -6,46 +6,71 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="css/cadastro.css" rel="stylesheet" type="text/css">
+
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 align="center">agendar consulta</h2>
-	<br/>
-	<br/>
+<div class="container">
+
+	<div class="title">
+		<h2 align="center">agendar consulta</h2>
+	</div>
+	
 	 <form method="POST" action='consulta'>
 	 		
 	 		<c:if test="${consulta.id != null}">
-           		<input type="hidden" name="id" value="<c:out value='${consulta.id}' />" />
+           		<input type="hidden" name="id" value="<c:out value='${consulta.id}' />"  />
             </c:if> 
+			
+			<div class="row">
 
-            Descrição : <input type="text" name="descricao" 
-            value="<c:out value="${consulta.descricao}" />"  required > 
-            
-            Data do Agendamento : <input type="date" name="dataAgendamento" min="${data}"
-            value="<fmt:formatDate pattern="dd/MM/yyyy" value="${dataAgendamento}" />"  required > 
-        
+	            <label> Descrição *</label>
+		        <input type="text" name="descricao" placeholder="Ex.: consulta com cardiologista" value="<c:out value="${consulta.descricao}" />"  required > 
+				
+			</div>
+			
             <br>
-            <label for="medico">Médicos disponíveis :
-				<select id="medico" name="medico">
-	                <c:forEach var="medico" items="${medicos}">
+            <div class="row">
+            
+	            <label> Data do agendamento *</label>  
+	           
+	            <input type="date" name="dataAgendamento" min="${data}"
+				value="<fmt:formatDate pattern="dd/MM/yyyy" value="${dataAgendamento}" />"  required > 
+	        	
+	        </div>
+	        	
+            <br>
+            <div class="row">
+            
+	            <label> Médicos disponiveis *</label>  
+
+		         <select id="medico" name="medico">
+					<c:forEach var="medico" items="${medicos}">
 						<option value="${medico.id}">${medico.nome}</option>     
 					</c:forEach>             
 				</select>
-			</label>
-			<br>   
+				
+			</div>
 			
 			<br>
-            <label for="paciente">Selecionar paciente :
+			<div class="row">
+			
+	            <label> selecionar Paciente *</label>  
 				<select id="paciente" name="paciente">
-	                <c:forEach var="paciente" items="${pacientes}">
+		            <c:forEach var="paciente" items="${pacientes}">
 						<option value="${paciente.id}">${paciente.nome}</option>     
 					</c:forEach>             
 				</select>
-			</label>
-			<br>                     
-            <input  type="submit" value="agendar" />
-           
+			</div>
+				
+			<br> 
+			<div align="center" class="submit">                    
+            	<input  type="submit" value="agendar" />
+           	</div>
         </form>
+        
         <c:if test="${not empty mensagem}">
 				<p class="alert alert-error">
 					${mensagem}
@@ -53,6 +78,7 @@
 		</c:if>	
 		
         <a href="consulta?action=listar">Listar</a>
+</div>
 
 </body>
 </html>

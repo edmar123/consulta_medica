@@ -1,0 +1,58 @@
+/*
+ @autor: edmar soares
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body {
+	background: #6C2A6A;
+	font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+	
+input[type="text"], input[type="date"], select {
+	padding: 8px;
+}
+
+label {
+	padding: 1px 0 5px 0;
+    flex: 1;
+    color:#ffff;
+}
+
+select {
+	
+}
+
+.row {
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: .5em;
+		width: 500px;
+	
+}
+
+input[type="submit"] {
+	color: #6C2A6A;
+	margin: 10px 0 0 0;	
+	padding: 5px 0 5px;
+}
+
+.title {
+	color: #fff;	
+}
+
+a {
+	margin: 10px;
+	color: #fff;
+}
+ 	
