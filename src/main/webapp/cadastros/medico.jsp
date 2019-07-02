@@ -5,31 +5,48 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/cadastro.css" rel="stylesheet" type="text/css">
+
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 align="center">Cadastro de médico</h2>
-	<br/>
-	<br/>
-	 <form method="POST" action='medico'>
+<div class="container">
 
-            Nome : <input type="text" name="nome" 
+	<div class="title">
+		<h2 align="center">Cadastro de médico</h2>
+	</div>
+	
+	
+	 <form method="POST" action='medico'>
+		<div class="row">
+            <label>Nome *</label>
+             <input type="text" name="nome" placeholder="Ex.: Manoel silva"
             value="<c:out value="${medico.nome}" />"  required > 
-            
-            Cpf : <input type="text" name="cpf" 
+        </div>
+        
+        <div class="row">
+            <label>Cpf *</label>
+            <input type="text" name="cpf" placeholder="Ex.: cardiologia"
             value="<c:out value="${medico.cpf}" />" required > 
-            
-            Área de atuação : <input type="text" name="areaAtuacao" 
+        </div>
+        
+        <div class="row">
+            <label>Área de atuação *</label>
+            <input type="text" name="areaAtuacao" 
             value="<c:out value="${medico.areaAtuacao}" />" required > 
-            
+       	</div>
+       	
+       	<div align="center" class="submit">
             <input  type="submit" value="salvar" />
+			<a href="medico?action=listar">Listar</a>   
+        </div>
+        
         </form>
         <c:if test="${not empty mensagem}">
 			<p class="alert alert-success">
 				${mensagem}
 			</p>
 		</c:if>	
-        <a href="medico?action=listar">Listar</a>
-        
+</div>       
 </body>
 </html>

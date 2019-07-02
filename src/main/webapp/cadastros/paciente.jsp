@@ -19,26 +19,26 @@
 	<br/>
 	 <form method="POST" action='paciente' name="">
 		<div class="row">
-            <label>Nome :</label>
-            <input type="text" name="nome" 
+            <label>Nome *</label>
+            <input type="text" name="nome" placeholder="Ex.: edmar soares"
             value="<c:out value="${paciente.nome}" />" > 
         </div>
         
         <div class="row">
-            <label>Cpf :</label>
-             <input type="text" name="cpf" 
+            <label>Cpf *</label>
+             <input type="text" name="cpf" placeholder="Ex.: 99999999999"
             value="<c:out value="${paciente.cpf}" />" > 
 		</div>
 		
 		<div class="row">            
-            <label> Rua :</label>
-             <input type="text" name="rua" 
+            <label> Rua *</label>
+             <input type="text" name="rua" placeholder="Ex.: Rua São Jorge"
             value="<c:out value="${paciente.endereco.rua}" />" > 
         </div>
         
         <div class="row">
-           <label> Bairro :</label>
-            <input type="text" name="bairro" 
+           <label> Bairro *</label>
+            <input type="text" name="bairro" placeholder="Ex.: Manaíra" 
             value="<c:out value="${paciente.endereco.bairro}" />" > 
         </div>     
         

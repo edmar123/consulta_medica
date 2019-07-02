@@ -18,7 +18,7 @@ public class ConsultaDao extends GenericDAO<Consulta, Long> {
 		Query query = this.factory.createQuery("SELECT c FROM Consulta c INNER JOIN c.agendamento as agen WHERE"
 				+ " agen.dataAgendamento = :agendamento");
 		query.setParameter("agendamento", agendamento);
-		List<Consulta> entidades =(List<Consulta>) query.getResultList();
+		List<Consulta> entidades = query.getResultList();
 		
 		return entidades;
 	}

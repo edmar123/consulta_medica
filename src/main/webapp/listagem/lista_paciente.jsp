@@ -6,12 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/lista.css" rel="stylesheet" type="text/css">
+
 <title>Show All Users</title>
 </head>
 <body>
 	<h3 align="center">Pacientes cadastrados</h3>
 	
-    <table border=1>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>

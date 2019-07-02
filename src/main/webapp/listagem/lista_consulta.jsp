@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/lista.css" rel="stylesheet" type="text/css">
+
 <title>Lista de consultas</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
 				</p>
 			</c:if>	</div>
 		</div>
-    <table border=1>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -51,8 +53,10 @@
             </c:forEach>
         </tbody>
     </table>
-    <p><a href="consulta?action=cadastro">adicionar nova consulta</a></p>
-	<p><a href="home?action=home">home</a></p>
     
+    <div class="footer">
+	   	<a href="consulta?action=cadastro">adicionar nova consulta</a>
+		<a href="home?action=home">home</a>
+    </div>
  	</body>
 </html>

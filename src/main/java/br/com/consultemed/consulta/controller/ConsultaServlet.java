@@ -61,26 +61,29 @@ public class ConsultaServlet extends HttpServlet {
 		String buscarPorData = request.getParameter("dataAgendamento");
 		
 		if (buscarPorData != null) {
-			this.consultarPorData(request, response);
+			this.consultarPorData(request, response); 
 		}
-
-		switch (action) {
-
-		case "listar":
-			listarTodos(request, response);
-			break;
-		case "cadastro":
-			prepararParaCadastrar(request, response);
-			break;
-		case "delete":
-			deletar(request, response);
-			break;
-		case "editar":
-			editar(request, response);
-			break;
-		default:
-
-			break;
+		
+		if (action != null) {
+			
+			switch (action) {
+			
+			case "listar":
+				listarTodos(request, response);
+				break;
+			case "cadastro":
+				prepararParaCadastrar(request, response);
+				break;
+			case "delete":
+				deletar(request, response);
+				break;
+			case "editar":
+				editar(request, response);
+				break;
+			default:
+				
+				break;
+			}
 		}
 
 	}

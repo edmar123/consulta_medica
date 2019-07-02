@@ -34,7 +34,7 @@ public class Consulta {
 	@JoinColumn(name="id_medico")
 	private Medico medico;
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_agendamento")
 	private Agendamento agendamento;
 	
