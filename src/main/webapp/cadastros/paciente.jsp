@@ -5,52 +5,54 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link href="css/cadastro.css" rel="stylesheet" type="text/css">
+
+<title>consulte med</title>
 </head>
 <body>
-	<h2 align="center">Cadastro de Paciente</h2>
+<div class="container">
+	
+	<div class="title">
+		<h2 align="center">Cadastro de Paciente</h2>
+	</div>
+	
 	<br/>
 	 <form method="POST" action='paciente' name="">
-
-            Nome : <input type="text" name="nome" 
+		<div class="row">
+            <label>Nome :</label>
+            <input type="text" name="nome" 
             value="<c:out value="${paciente.nome}" />" > 
-            
-            Cpf : <input type="text" name="cpf" 
+        </div>
+        
+        <div class="row">
+            <label>Cpf :</label>
+             <input type="text" name="cpf" 
             value="<c:out value="${paciente.cpf}" />" > 
-            
-            <p>Endereço: </p> <br>
-            Rua : <input type="text" name="rua" 
+		</div>
+		
+		<div class="row">            
+            <label> Rua :</label>
+             <input type="text" name="rua" 
             value="<c:out value="${paciente.endereco.rua}" />" > 
-            
-            Bairro : <input type="text" name="bairro" 
+        </div>
+        
+        <div class="row">
+           <label> Bairro :</label>
+            <input type="text" name="bairro" 
             value="<c:out value="${paciente.endereco.bairro}" />" > 
-             
-<%-- 
-            User Name : <input type="text" name="uname"
-                               value="<c:out value="${user.uname}" />" /> <br />
-            Password : <input
-                type="password" name="pass"
-                value="<c:out value="${user.password}" />" /> <br /> 
-            Email : <input
-                type="text" name="email"
-                value="<c:out value="${user.email}" />" /> <br /> 
- 
-            Registration : <input
-                type="text" name="dob"
-                value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" readonly="readonly"/>(You Can't Change this)  <br />
-
-            Registration : <input
-                type="text" name="dob"
-                value="<fmt:formatDate pattern="yyyy/MM/dd" value="${user.registeredon}" />" />(yyyy/MM/dd)  <br />  --%>
+        </div>     
+        
+        <div align="center" class="submit">
             <input  type="submit" value="salvar" />
+			<a href="paciente?action=listar">Listar</a>
+        </div>
+        
         </form>
         	<c:if test="${not empty mensagem}">
 				<p class="alert alert-success">
 					${mensagem}
 				</p>
 			</c:if>	
- 		<a href="paciente?action=listar">Listar</a>
-       
-
+</div>       
 </body>
 </html>

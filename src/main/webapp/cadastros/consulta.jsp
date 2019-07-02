@@ -48,7 +48,7 @@
 
 		         <select id="medico" name="medico">
 					<c:forEach var="medico" items="${medicos}">
-						<option value="${medico.id}">${medico.nome}</option>     
+						<option  value="${medico.id}">${medico.nome}</option>     
 					</c:forEach>             
 				</select>
 				
@@ -57,7 +57,7 @@
 			<br>
 			<div class="row">
 			
-	            <label> selecionar Paciente *</label>  
+	            <label> Selecionar Paciente *</label>  
 				<select id="paciente" name="paciente">
 		            <c:forEach var="paciente" items="${pacientes}">
 						<option value="${paciente.id}">${paciente.nome}</option>     
@@ -68,6 +68,7 @@
 			<br> 
 			<div align="center" class="submit">                    
             	<input  type="submit" value="agendar" />
+				<a href="consulta?action=listar">Listar</a>
            	</div>
         </form>
         
@@ -75,9 +76,7 @@
 				<p class="alert alert-error">
 					${mensagem}
 				</p>
-		</c:if>	
-		
-        <a href="consulta?action=listar">Listar</a>
+		</c:if>			
 </div>
 
 </body>
