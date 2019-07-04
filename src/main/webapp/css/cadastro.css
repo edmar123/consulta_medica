@@ -9,12 +9,17 @@
 body {
 	background: #6C2A6A;
 	font-family: 'Varela Round', sans-serif;
+	color: #fff;
 }
 
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.alert alert-error {
+	color: #fff;
 }
 
 	
