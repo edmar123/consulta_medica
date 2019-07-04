@@ -9,24 +9,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/lista.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/e4a078c227.js"></script>
 
 <title>Lista de consultas</title>
 </head>
 <body>
 	<h3 align="center">Consultas cadastradas</h3>
 	
-		<div align="right">
+		<div class="" align="right">
 			<form action="consulta" method="get">
 		   		Consultar por data: <input type="date" name="dataAgendamento"  value="" /> 
 		   		
 				<input  type="submit" value="consultar" />    
 			</form>
+			
 			<div>
-			<c:if test="${not empty mensagem}">
-				<p class="alert">
-					${mensagem}
-				</p>
-			</c:if>	</div>
+				<c:if test="${not empty mensagem}">
+					<p class="alert">
+						${mensagem}
+					</p>
+				</c:if>
+			</div>
+			
 		</div>
     <table>
         <thead>
@@ -55,8 +59,8 @@
     </table>
     
     <div class="footer">
-	   	<a href="consulta?action=cadastro">adicionar nova consulta</a>
-		<a href="home?action=home">home</a>
+	   	<a href="consulta?action=cadastro"> <i class="fas fa-plus"></i> Adicionar consulta</a>
+		<a href="home?action=home"><i class="fas fa-home"></i>Início</a>
     </div>
  	</body>
 </html>

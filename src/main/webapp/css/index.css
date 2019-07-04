@@ -67,4 +67,9 @@ span {
 li a:hover {
 	opacity: 0.8;
 	background-color: #6C2A6A !important;
+	color: #fff !important;
+}
+
+li a:hover {
+	
 }

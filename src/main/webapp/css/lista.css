@@ -1,9 +1,7 @@
 body {
  	background: #e1d3ed;
  	font-family: 'Varela Round', sans-serif;
-
 }
-
 
 table {
 	border-collapse: collapse;
@@ -20,7 +18,7 @@ tr:nth-child(even){
 }
 
 a {	
-	padding: 10px;
+	padding: 0;
 	text-decoration: none;
 	color: #6C2A6A;
 }
@@ -33,9 +31,25 @@ th {
 .footer {
 	padding; 30px;	
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	margin-top: 20px;
+	padding:0 30px;
 }
 
+.footer a {
+	transition:all 0.5s;
+	padding: 5px 10px;
+}
+
+.footer i {
+	padding: 0 5px;
+}
+
+.footer a:hover {
+	color: #fff;
+	background-color: #6C2A6A;
+		
+}
 h3 {
 	color: #6C2A6A;
 }

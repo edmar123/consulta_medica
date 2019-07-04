@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/lista.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/e4a078c227.js"></script>
 
 <title>Show All Users</title>
 </head>
@@ -36,7 +37,9 @@
             </c:forEach>
         </tbody>
     </table>
-	 <p><a href="paciente?action=cadastro">adicionar novo paciente</a></p>
-	<p><a href="home?action=home">home</a></p>
+    <div class="footer">
+		 <a href="paciente?action=cadastro"> <i class="fas fa-plus"></i> Adicionar paciente</a>
+		 <a href="home?action=home">  <i class="fas fa-home"></i> home</a>
+	</div>
 </body>
 </html>

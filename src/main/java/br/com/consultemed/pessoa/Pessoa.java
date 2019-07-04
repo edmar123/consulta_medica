@@ -19,7 +19,7 @@ public class Pessoa{
 	@Column(nullable=false)
 	private String nome;
 	
-	@Column(unique=true)
+//	@Column(unique=true)
 	private String cpf;
 	
 	@OneToOne(cascade=CascadeType.PERSIST)
