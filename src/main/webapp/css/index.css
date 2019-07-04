@@ -5,7 +5,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
+body  {
 	background: #6C2A6A;
 	font-family: 'Varela Round', sans-serif;
 /* 	background-image: url("../img/img-1.png");
@@ -14,14 +14,14 @@ body {
 .container {
 	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	flex-direction: column;
 	align-content: center;
 }
 
-.header {
+.header  {
 	margin: 40px 0 0 0;
-	width: 1350px;
+	width: 100%;
 	height: 250px;
 	background-color: #ffffff;
 }
