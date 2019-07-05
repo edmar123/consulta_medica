@@ -16,7 +16,7 @@
 <body>
 	<h3 align="center">Consultas cadastradas</h3>
 	
-		<div class="" align="right">
+		<div class="filtro"  align="right">
 			<form action="consulta" method="get">
 		   		Consultar por data: <input type="date" name="dataAgendamento"  value="" /> 
 		   		
