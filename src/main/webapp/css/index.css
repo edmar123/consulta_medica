@@ -6,12 +6,12 @@
 # General
 --------------------------------------------------------------*/
 body  {
-	background: #6C2A6A;
+	background-color: #6C2A6A;
 	font-family: 'Varela Round', sans-serif;
 /* 	background-image: url("../img/img-1.png");
  */}
 
-.container {
+.container  {
 	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
@@ -22,54 +22,63 @@ body  {
 .header  {
 	margin: 40px 0 0 0;
 	width: 100%;
-	height: 250px;
 	background-color: #ffffff;
 }
 
-h3 {
-	color: #6C2A6A;
-	font-family: 'Varela Round', sans-serif;
-	font-size: 2.5em;
-	margin: 0 0 40px;
-	padding: 20px 0 10px;
-}
-
-.title {
+/* .content  .title  {
 	background-color: #ffffff;
 	text-decoration: none;
-}
+ 		color: #fff;
+} */
 
 .content {
 	padding: 50px 10px 0 10px;
 	text-align: justify;
 	background-color: #6C2A6A;
-	height: 250px;
+	height: 500px;
+	background-image: url("../img/intro-img.svg");
+	background-size: cover;
 }
 
-.content p {
+
+.content  p {
 	color: #ffffff;
 	margin: 40px 0 0 0;
 	text-align: center;;
 }
 
-span {
+.container  .content  h3  {
+	color: #fff;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 2.5em;
+	padding: 10px 0 ;
+}
+
+span  {
 	color: #6C2A6A;
 }
 
-.navbar navbar-expand-lg navbar-light bg-light {
+.navbar navbar-expand-lg navbar-light bg-light  {
 	background: #ffffff;
 }
 
-#navbarSupportedContent {
+#navbarSupportedContent  {
 	background: #ffffff;
 }
 
-li a:hover {
+li a {
+	color: #6C2A6A !important;	
+}
+
+li a:hover  {
 	opacity: 0.8;
 	background-color: #6C2A6A !important;
 	color: #fff !important;
 }
 
-li a:hover {
-	
+li {
+	display: flex;
+	flex-direction: row;
 }
+
+

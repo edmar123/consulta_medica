@@ -25,6 +25,7 @@
 	
 <link href="css/index.css" rel="stylesheet" type="text/css">
 
+<script src="https://kit.fontawesome.com/e4a078c227.js"></script>
 
 </head>
 <body>
@@ -33,16 +34,15 @@
 	
 	<div class="header">
 		
-		<div class ="title" >
-			<h3 align="center"> Sistema de Consultas médicas </h3>
-		</div>
-		
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      <ul class="navbar-nav mr-auto">
 	        <li class="nav-item active">
-	          <a class="nav-link" href="consulta?action=cadastro">Agendar consulta <span class="sr-only">(current)</span></a>
+	          <a class="nav-link" href="consulta?action=cadastro">
+					<i class="fas fa-clinic-medical"></i>
+	       			  Agendar consulta <span class="sr-only">(current)</span>
+	       	</a>
 	        </li>
 	        <li class="nav-item active">
 	          <a class="nav-link" href="#">Prontuário do paciente <span class="sr-only">(current)</span></a>
@@ -65,9 +65,13 @@
 	      
 	    </div> 
 	  </nav>
+	  
   	</div>
   	
   	<div class="content">
+  	
+  		<h3 align="center"> Sistema de Consultas médicas </h3>
+  	
   		<p>
   			O sistema consiste em um gerenciador de consultas médicas. O mesmo possui 
   			validação para nao agendar consultas no mesmo dia e possui cadastros básicos 
