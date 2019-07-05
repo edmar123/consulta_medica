@@ -122,6 +122,10 @@ public class ConsultaServlet extends HttpServlet {
 	private void consultarPorData(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String dataAgendamento = request.getParameter("dataAgendamento");
 		
+		if (dataAgendamento == null) {
+			return;
+		}
+		
 		LocalDate dataAgendamentoFormatter = ConvertStringToLocalDate.convertToLocalDate(dataAgendamento);
 
 		List<Consulta> consultas = this.consultaService.buscarPorDataAgendamento(dataAgendamentoFormatter);
@@ -225,7 +229,7 @@ public class ConsultaServlet extends HttpServlet {
 			
 			}else {
 				consultaService.salvar(consulta);
-				mensagem = "consulta cadastrado com sucesso";
+				mensagem = "consulta cadastrada com sucesso";
 
 			}
 			

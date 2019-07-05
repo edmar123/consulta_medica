@@ -9,7 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/lista.css" rel="stylesheet" type="text/css">
-<script src="https://kit.fontawesome.com/e4a078c227.js"></script>
+  <link href="css/fonts/css/all.css" rel="stylesheet"> <!--load all styles -->
 
 <title>Lista de consultas</title>
 </head>
@@ -18,7 +18,8 @@
 	
 		<div class="filtro"  align="right">
 			<form action="consulta" method="get">
-		   		Consultar por data: <input type="date" name="dataAgendamento"  value="" /> 
+		   		<label>Consultar por data:</label>  
+		   		<input type="date" name="dataAgendamento"  value=""  required /> 
 		   		
 				<input  type="submit" value="consultar" />    
 			</form>

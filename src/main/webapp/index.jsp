@@ -24,8 +24,7 @@
 	crossorigin="anonymous"></script>
 	
 <link href="css/index.css" rel="stylesheet" type="text/css">
-
-<script src="https://kit.fontawesome.com/e4a078c227.js"></script>
+ <link href="css/fonts/css/all.css" rel="stylesheet"> <!--load all styles -->
 
 </head>
 <body>
