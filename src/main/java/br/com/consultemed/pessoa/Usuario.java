@@ -2,6 +2,7 @@ package br.com.consultemed.pessoa;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,6 +26,12 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
+	
+	@Column
+	private String login;
+	
+	@Column
+	private String  senha;
 	
 	@Enumerated(EnumType.STRING)
 	private TipoUsuario tipoUsuario;

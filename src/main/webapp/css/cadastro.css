@@ -5,7 +5,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
 body {
 	background: #6C2A6A;
 	font-family: 'Varela Round', sans-serif;
@@ -22,39 +21,41 @@ body {
 	color: #fff;
 }
 
-	
 input[type="text"], input[type="date"], select {
 	padding: 8px;
 }
 
 label {
 	padding: 1px 0 5px 0;
-    flex: 1;
-    color:#ffff;
+	flex: 1;
+	color: #ffff;
 }
 
 .row {
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	padding: .5em;
 	width: 500px;
-	
 }
 
 input[type="submit"] {
 	color: #6C2A6A;
-	margin: 10px 0 0 0;	
+	margin: 10px 0 0 0;
 	padding: 5px 0 5px;
 	font-size: 15px;
+	border-radius: 4px;
+	border: 0;
+	padding: 9px 5px 9px 5px;
+	background-color: #fff;
 }
 
 .title {
-	color: #fff;	
+	color: #fff;
 }
 
-a {	
-	text-decoration:none;
+a {
+	text-decoration: none;
 	margin: 0 0 0 0;
 	padding: 9px 5px 9px 5px;
 	border-radius: 4px;
@@ -68,7 +69,6 @@ a {
 	font-size: 15px;
 }
 
-select option{
-    background: rgba(0, 0, 0, 0.3);
+select option {
+	background: rgba(0, 0, 0, 0.3);
 }
- 	

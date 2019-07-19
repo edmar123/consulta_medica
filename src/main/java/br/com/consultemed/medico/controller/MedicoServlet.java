@@ -3,6 +3,8 @@ package br.com.consultemed.medico.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,9 @@ import br.com.consultemed.pessoa.Usuario;
 @WebServlet("/medico")
 public class MedicoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	@Inject
+//	@Named(value="medicoServiceImpl")
 	private MedicoService medicoService;
 
 	/**
@@ -30,7 +34,7 @@ public class MedicoServlet extends HttpServlet {
 	 */
 	public MedicoServlet() {
 		super();
-		this.medicoService = new MedicoService();
+//		this.medicoService = new MedicoService();
 	}
 
 	/**

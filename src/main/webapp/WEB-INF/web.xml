@@ -24,4 +24,9 @@
     <servlet-name>MedicoServlet</servlet-name>
     <url-pattern>/MedicoServlet</url-pattern>
   </servlet-mapping>
+  
+   <listener>
+        <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+    </listener>
 </web-app>
+

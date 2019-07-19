@@ -3,6 +3,8 @@ package br.com.consultemed.paciente.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,10 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.consultemed.consulta.model.Consulta;
 import br.com.consultemed.endereco.model.Endereco;
-import br.com.consultemed.medico.model.Medico;
-import br.com.consultemed.medico.service.MedicoService;
 import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.paciente.service.PacienteService;
 import br.com.consultemed.pessoa.TipoUsuario;
@@ -24,8 +23,10 @@ import br.com.consultemed.pessoa.Usuario;
  */
 @WebServlet("/paciente")
 public class PacienteServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
+	@Inject
 	private PacienteService pacienteService;
 
 	/**
@@ -33,7 +34,6 @@ public class PacienteServlet extends HttpServlet {
 	 */
 	public PacienteServlet() {
 		super();
-		this.pacienteService = new PacienteService();
 	}
 
 	/**

@@ -5,38 +5,44 @@ import java.util.List;
 
 import br.com.consultemed.dao.GenericDAO;
 
-public abstract class ServicoGenerico<T, G extends Serializable> {
-
-	private GenericDAO<T,G> daoGenerico;
+public abstract  class ServicoGenerico<T, G extends Serializable> {
+	
+//	@Inject
+//	private  GenericDAO<T,G> getDAO();
 	
 	@SuppressWarnings("unused")
 	private Class<T> clazz;
 	
 	@SuppressWarnings("unchecked")
 	public ServicoGenerico(Class clazz) {
-		this.daoGenerico = new GenericDAO(clazz);
 		this.clazz = clazz;
+//		daoGenerico = new  GenericDAO<>(clazz);
 	}
 	
+	public ServicoGenerico() {
+	 
+	}
+	
+	protected abstract GenericDAO<T, G> getDAO();
 
 	public List<T> listar() {
-		List<T> entidades =  this.daoGenerico.listar();
+		List<T> entidades =  this.getDAO().listar();
 		return entidades;
 	}
 
 	public void salvar(T entidade) {
-		this.daoGenerico.salvar(entidade);
+		this.getDAO().salvar(entidade);
 	}
 
 	public void remover(G id) {
-		this.daoGenerico.remover(id);
+		this.getDAO().remover(id);
 	}
 
 	public void editar(T entidade) {
-		this.daoGenerico.editar(entidade);
+		this.getDAO().editar(entidade);
 	}
 
 	public T buscarPorId(G id) {
-		return this.daoGenerico.buscarPorId(id);
+		return this.getDAO().buscarPorId(id);
 	}
 }

@@ -30,15 +30,15 @@ public class Consulta {
 	@Column
 	private String descricao;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.REMOVE)
 	@JoinColumn(name="id_medico")
 	private Medico medico;
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToOne(cascade= {CascadeType.PERSIST ,CascadeType.REMOVE}) 
 	@JoinColumn(name="id_agendamento")
 	private Agendamento agendamento;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.REMOVE)
 	@JoinColumn(name="id_consulta")
 	private List<Exame> exames;
 	

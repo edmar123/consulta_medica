@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,10 +29,19 @@ import br.com.consultemed.utils.ConvertStringToLocalDate;
 @WebServlet("/consulta")
 public class ConsultaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	@Inject
+//	@Named(value = "consultaServiceImpl")
 	private ConsultaService consultaService;
+	
+	@Inject
+//	@Named(value = "medicoServiceImpl")
 	private MedicoService medicoService;
+	
+	@Inject
+//	@Named(value="pacienteServiceImpl")
 	private PacienteService pacienteService;
+	
 	private String mensagem = "";
 
 //	public String getErrorMessage() {
@@ -42,9 +53,6 @@ public class ConsultaServlet extends HttpServlet {
 	 */
 	public ConsultaServlet() {
 		super();
-		this.consultaService = new ConsultaService();
-		this.medicoService = new MedicoService();
-		this.pacienteService = new PacienteService();
 	}
 
 	public void destroy() {

@@ -18,7 +18,7 @@
 		<h2 align="center">agendar consulta</h2>
 	</div>
 	
-	 <form method="POST" action='consulta'>
+	 <form method="POST" action='consulta'   name="form">
 	 		
 	 		<c:if test="${consulta.id != null}">
            		<input type="hidden" name="id" value="<c:out value='${consulta.id}' />"  />
@@ -36,10 +36,10 @@
             
 	            <label> Data do agendamento *</label>  
 	           
-	            <input type="date" name="dataAgendamento" min="${data}"
+	            <input type="date"    name="dataAgendamento" min="${data}" size=10  maxlength=10  
 				value="<fmt:formatDate pattern="dd/MM/yyyy" value="${dataAgendamento}" />"  required > 
-	        	
-	        </div>
+<!-- 	        	onkeypress="MascaraData(form.dataAgendamento)"
+ -->	        </div>
 	        	
             <br>
             <div class="row">
@@ -78,6 +78,6 @@
 				</p>
 		</c:if>			
 </div>
-
+<script type="text/javascript "   src="js/main.js"></script>
 </body>
 </html>
