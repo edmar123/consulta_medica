@@ -22,17 +22,18 @@
                 <th>Cpf</th>
                 <th>rua</th>
                 <th>bairro</th>
+                <th><i class="fas fa-trash-restore"></th>
             </tr>
         </thead>
         <tbody>
             <c:forEach items="${pacientes}" var="paciente">
-                <tr>
+                <tr>'
                     <td><c:out value="${paciente.id}" /></td>
                     <td><c:out value="${paciente.nome}" /></td>
                     <td><c:out value="${paciente.cpf}" /></td>
 					<td><c:out value="${paciente.endereco.rua}" /></td>
 					<td><c:out value="${paciente.endereco.bairro}" /></td>
-
+					 <td><a href="paciente?action=delete&id=<c:out value="${paciente.id}"/>"><i class="fas fa-trash-restore"></a></td>
                 </tr>
             </c:forEach>
         </tbody>

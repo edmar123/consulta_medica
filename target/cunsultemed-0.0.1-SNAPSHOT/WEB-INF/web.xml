@@ -24,9 +24,22 @@
     <servlet-name>MedicoServlet</servlet-name>
     <url-pattern>/MedicoServlet</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+  </listener>
+  <filter>
+    <display-name>LoginFilter</display-name>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>br.com.consultemed.security.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/LoginFilter</url-pattern>
+  </filter-mapping>
   
-   <listener>
-        <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
-    </listener>
+<!--    <session-config>
+        <session-timeout>
+            300
+        </session-timeout>
+    </session-config> -->
 </web-app>
-

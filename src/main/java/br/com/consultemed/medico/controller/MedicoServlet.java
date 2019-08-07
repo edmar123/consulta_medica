@@ -16,7 +16,7 @@ import br.com.consultemed.medico.model.Medico;
 import br.com.consultemed.medico.service.MedicoService;
 import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.pessoa.TipoUsuario;
-import br.com.consultemed.pessoa.Usuario;
+import br.com.consultemed.usuario.Usuario;
 
 /**
  * Servlet implementation class MedicoServlet
@@ -24,9 +24,9 @@ import br.com.consultemed.pessoa.Usuario;
 @WebServlet("/medico")
 public class MedicoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
-//	@Named(value="medicoServiceImpl")
+	// @Named(value="medicoServiceImpl")
 	private MedicoService medicoService;
 
 	/**
@@ -34,7 +34,7 @@ public class MedicoServlet extends HttpServlet {
 	 */
 	public MedicoServlet() {
 		super();
-//		this.medicoService = new MedicoService();
+		// this.medicoService = new MedicoService();
 	}
 
 	/**
@@ -55,13 +55,21 @@ public class MedicoServlet extends HttpServlet {
 		case "cadastro":
 			prepararParaCadastrar(request, response);
 			break;
-
+		case "delete":
+			deletar(request, response);
+			break;
 		default:
 
 			break;
 		}
 	}
 
+	private void deletar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String idConsulta = request.getParameter("id");
+		this.medicoService.remover(new Long(idConsulta));
+		response.sendRedirect(request.getContextPath() + "/medico?action=listar");
+	}
+	
 	private void prepararParaCadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -86,7 +94,7 @@ public class MedicoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
+		// doGet(request, response);
 
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
@@ -102,11 +110,11 @@ public class MedicoServlet extends HttpServlet {
 
 		medico.setUsuario(usuario);
 		this.medicoService.salvar(medico);
-		
+
 		String mensagem = "médico cadastrado com sucesso";
-		
+
 		request.setAttribute("mensagem", mensagem);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastros/medico.jsp");
 		dispatcher.forward(request, response);
 

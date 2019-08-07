@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 
+import br.com.consultemed.usuario.Usuario;
+
 @MappedSuperclass
 public class Pessoa{
 	

@@ -9,10 +9,9 @@ table {
 }
 
 th, td {
-	text-align: left;
+	text-align: center;
 	padding: 8px;
 	color: #6C2A6A;
-	
 }
 
 tr:nth-child(even){
@@ -67,4 +66,5 @@ h3 {
 .filtro label {
 	color: #6C2A6A;
 }
+
 

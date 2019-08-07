@@ -16,7 +16,7 @@ import br.com.consultemed.endereco.model.Endereco;
 import br.com.consultemed.paciente.model.Paciente;
 import br.com.consultemed.paciente.service.PacienteService;
 import br.com.consultemed.pessoa.TipoUsuario;
-import br.com.consultemed.pessoa.Usuario;
+import br.com.consultemed.usuario.Usuario;
 
 /**
  * Servlet implementation class MedicoServlet
@@ -54,11 +54,19 @@ public class PacienteServlet extends HttpServlet {
 		case "cadastro":
 			prepararParaCadastrar(request, response);
 			break;
-
+		case "delete":
+			deletar(request, response);
+			break;
 		default:
 
 			break;
 		}
+	}
+	
+	private void deletar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String idConsulta = request.getParameter("id");
+		this.pacienteService.remover(new Long(idConsulta));	
+		response.sendRedirect(request.getContextPath() +"/consulta?action=listar");
 	}
 
 	private void prepararParaCadastrar(HttpServletRequest request, HttpServletResponse response)

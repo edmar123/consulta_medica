@@ -11,11 +11,7 @@ import javax.persistence.Query;
 import br.com.consultemed.consulta.model.Consulta;
 import br.com.consultemed.dao.GenericDAO;
 
-//@Named(value="consultaDao")
 public class ConsultaDao extends GenericDAO<Consulta, Long> {
-//	
-//	@Inject
-//	private  EntityManager manager;
 	
 	public ConsultaDao() {
 		super(Consulta.class);
@@ -40,9 +36,4 @@ public class ConsultaDao extends GenericDAO<Consulta, Long> {
 		return existe;
 	}
 
-//	@Override
-//	protected EntityManager getEntityManager() {
-//		// TODO Auto-generated method stub
-//		return this.manager;
-//	}
 }

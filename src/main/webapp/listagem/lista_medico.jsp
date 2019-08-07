@@ -20,6 +20,7 @@
                 <th>ID</th>
                 <th>nome</th>
                 <th>Cpf</th>
+                <th><i class="fas fa-trash-restore"></th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +29,9 @@
                     <td><c:out value="${medico.id}" /></td>
                     <td><c:out value="${medico.nome}" /></td>
                     <td><c:out value="${medico.cpf}" /></td>
-
+					<td   class="lixeira"><a href="medico?action=delete&id=<c:out value="${medico.id}"/>"><i class="fas fa-trash-restore"></i></a></td>
+<%-- 					<td><a href="medico?action=editar&id=<c:out value='${medico.id}' />">reagendar consulta</a></td>
+ --%>		
                 </tr>
             </c:forEach>
         </tbody>

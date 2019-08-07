@@ -18,7 +18,8 @@ public class ProdutorEm implements Serializable {
 	private  EntityManagerFactory emf = Persistence.createEntityManagerFactory("consultemed");
 
 	@Produces
-	public EntityManager createEntityManager() {
+	@ApplicationScoped
+	public EntityManager createEntityManager() { 
 
 		EntityManager em = emf.createEntityManager();
 

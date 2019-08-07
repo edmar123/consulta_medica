@@ -35,6 +35,4 @@ public class ConsultaService extends ServicoGenerico<Consulta, Long> {
 		// TODO Auto-generated method stub
 		return consultaDao;
 	}
-
-
 }

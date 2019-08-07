@@ -43,15 +43,17 @@ public class HomeServlet extends HttpServlet {
 
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		String action = request.getParameter("action");
+		dispatcher = request.getRequestDispatcher("/login/login.jsp");
+//		dispatcher.forward(request, response);
 
 		switch (action) {
 		case "home":
 			response.sendRedirect(request.getContextPath());
 			break;
 		default:
-			// listBook(request, response);
 			break;
 		}
+		
 	}
 
 

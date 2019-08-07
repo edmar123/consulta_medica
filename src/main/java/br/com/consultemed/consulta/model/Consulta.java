@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -17,7 +16,6 @@ import javax.persistence.Table;
 import br.com.consultemed.agendamento.model.Agendamento;
 import br.com.consultemed.exame.model.Exame;
 import br.com.consultemed.medico.model.Medico;
-import br.com.consultemed.prontuario.model.Prontuario;
 
 @Entity
 @Table
@@ -30,8 +28,8 @@ public class Consulta {
 	@Column
 	private String descricao;
 	
-	@ManyToOne(cascade=CascadeType.REMOVE)
-	@JoinColumn(name="id_medico")
+	@OneToOne()
+	@JoinColumn(name="id_medico" )
 	private Medico medico;
 	
 	@OneToOne(cascade= {CascadeType.PERSIST ,CascadeType.REMOVE}) 

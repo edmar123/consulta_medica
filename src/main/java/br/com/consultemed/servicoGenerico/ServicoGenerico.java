@@ -7,22 +7,14 @@ import br.com.consultemed.dao.GenericDAO;
 
 public abstract  class ServicoGenerico<T, G extends Serializable> {
 	
-//	@Inject
-//	private  GenericDAO<T,G> getDAO();
-	
 	@SuppressWarnings("unused")
 	private Class<T> clazz;
 	
 	@SuppressWarnings("unchecked")
 	public ServicoGenerico(Class clazz) {
 		this.clazz = clazz;
-//		daoGenerico = new  GenericDAO<>(clazz);
 	}
-	
-	public ServicoGenerico() {
-	 
-	}
-	
+
 	protected abstract GenericDAO<T, G> getDAO();
 
 	public List<T> listar() {

@@ -2,8 +2,11 @@ package br.com.consultemed.medico.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import br.com.consultemed.consulta.model.Consulta;
 import br.com.consultemed.pessoa.Pessoa;
 
 @Entity
@@ -20,7 +23,7 @@ public class Medico extends Pessoa {
 	public void setAreaAtuacao(String areaAtuacao) {
 		this.areaAtuacao = areaAtuacao;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Medico [areaAtuacao=" + areaAtuacao + "]";

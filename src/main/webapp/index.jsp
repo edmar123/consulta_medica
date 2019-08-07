@@ -55,6 +55,9 @@
 	            <a class="dropdown-item" href="paciente?action=cadastro">Cadastro Paciente</a>            
 	          </div>
 	        </li>
+	         <li class="nav-item active">
+	          <a class="nav-link" href="login?action=logout">Sair <span class="sr-only">(current)</span></a>
+	        </li>
 	       
 	      </ul>
 	    <!--   <form class="form-inline my-2 my-lg-0">
